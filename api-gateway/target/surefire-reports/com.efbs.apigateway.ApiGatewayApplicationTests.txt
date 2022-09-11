@@ -1,0 +1,25 @@
+-------------------------------------------------------------------------------
+Test set: com.efbs.apigateway.ApiGatewayApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 23.741 s <<< FAILURE! - in com.efbs.apigateway.ApiGatewayApplicationTests
+contextLoads  Time elapsed: 0.03 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: 
+Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Invocation of init method failed; nested exception is org.flywaydb.core.internal.exception.FlywaySqlException: 
+Unable to obtain connection from database (jdbc:mysql://localhost:3306/employee_feedback?useSSL=false) for user 'root': CLIENT_PLUGIN_AUTH is required
+------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08001
+Error Code : 0
+Message    : CLIENT_PLUGIN_AUTH is required
+
+Caused by: org.flywaydb.core.internal.exception.FlywaySqlException: 
+
+Unable to obtain connection from database (jdbc:mysql://localhost:3306/employee_feedback?useSSL=false) for user 'root': CLIENT_PLUGIN_AUTH is required
+------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08001
+Error Code : 0
+Message    : CLIENT_PLUGIN_AUTH is required
+
+Caused by: java.sql.SQLNonTransientConnectionException: CLIENT_PLUGIN_AUTH is required
+Caused by: com.mysql.cj.exceptions.UnableToConnectException: CLIENT_PLUGIN_AUTH is required
+

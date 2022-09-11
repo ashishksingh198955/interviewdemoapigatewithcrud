@@ -1,0 +1,401 @@
+{
+	"info": {
+		"_postman_id": "a90ba6d8-45ac-46e3-adf5-29c3a059e3c4",
+		"name": "APIGatewaycallsformicroservices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "UserAuthentication",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \n   \n    \"email\": \"ashishkumarsingh296@gmail.com\",\n    \"password\": \"Ashish@123\"\n\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/api/auth/signin",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"auth",
+						"signin"
+					]
+				},
+				"description": "AuthenticationURL"
+			},
+			"response": []
+		},
+		{
+			"name": "AddCategory",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhc2hpbDkxMzMwOEBnbWFpbC5jb20iLCJpYXQiOjE2NjI4MTUzNjIsIlVzZXIgSWQiOjIzLCJVc2VyIE5hbWUiOiJhc2hpc2gga3VtYXIgc2luZ2giLCJSb2xlIjpbeyJhdXRob3JpdHkiOiJST0xFX0VNUExPWUVFIn1dLCJleHAiOjE2NjI4MTg5NjJ9.bbhqI2ekckillOB5b_hgAirJ48h2DzWk_jWktV8ibHVh4g7MYgwbD2NdcbUs0VQuYNIBhrSFzU0IpleMkGCqsg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \r\n   \r\n    \"categoryname\": \"apples\",\r\n    \"description\": \"apple sales5008\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/category/api/addcategory",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"category",
+						"api",
+						"addcategory"
+					]
+				},
+				"description": "Addcompany"
+			},
+			"response": []
+		},
+		{
+			"name": "AddUser",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \r\n    \"firstname\": \"ashish\",\r\n    \"middlename\": \"kumar\",\r\n    \"lastname\":\"singh\",\r\n      \"gender\":\"male\",\r\n    \"position\": \"Java developer\",\r\n      \"division\":\"IT\",\r\n     \"role\": [\r\n            \"ROLE_EMPLOYEE\"   \r\n    ],\r\n    \"contact\":\"9867546321\",\r\n    \"email\": \"ashi328@gmail.com\",\r\n    \"password\": \"Ashish@123\",\r\n    \"status\": \"true\"\r\n\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/employee/api/addemployee",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"employee",
+						"api",
+						"addemployee"
+					]
+				},
+				"description": "AddUser/Employee"
+			},
+			"response": []
+		},
+		{
+			"name": "ListCategory",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhc2hpbDkxMzMwOEBnbWFpbC5jb20iLCJpYXQiOjE2NjI4MDg4OTIsIlVzZXIgSWQiOjIzLCJVc2VyIE5hbWUiOiJhc2hpc2gga3VtYXIgc2luZ2giLCJSb2xlIjpbeyJhdXRob3JpdHkiOiJST0xFX0VNUExPWUVFIn1dLCJleHAiOjE2NjI4MTI0OTJ9.gsq05MSdLvNqN4YUmD7J_g6ycvS84qetIbqUEPNunTMxUy-J4HhVfTw1eKuHhKucY9E9Xu_FUClZlLDGhWWUGA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \r\n    \"firstname\": \"ashishk\",\r\n    \"middlename\": \"Ashish@\",\r\n    \"lastname\":\"sdsf\",\r\n      \"gender\":\"male\",\r\n    \"position\": \"Java developer\",\r\n      \"division\":\"IT\",\r\n      \"companyid\": null,\r\n     \"role\": [\r\n        \r\n            \"ROLE_COMPANY_HR\"\r\n        \r\n    ],\r\n    \"contact\":\"9867546321\",\r\n    \"email\": \"ashishkumarsingh231196@gmail.com\",\r\n    \"password\": \"Ashish@123\",\r\n    \"status\": \"true\"\r\n\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/category/api/getlistofcategory",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"category",
+						"api",
+						"getlistofcategory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ReadCategory",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhc2hpbDkxMzMwOEBnbWFpbC5jb20iLCJpYXQiOjE2NjI4MTUzNjIsIlVzZXIgSWQiOjIzLCJVc2VyIE5hbWUiOiJhc2hpc2gga3VtYXIgc2luZ2giLCJSb2xlIjpbeyJhdXRob3JpdHkiOiJST0xFX0VNUExPWUVFIn1dLCJleHAiOjE2NjI4MTg5NjJ9.bbhqI2ekckillOB5b_hgAirJ48h2DzWk_jWktV8ibHVh4g7MYgwbD2NdcbUs0VQuYNIBhrSFzU0IpleMkGCqsg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8085/category/api/viewcategory/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"category",
+						"api",
+						"viewcategory",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteCategory",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8085/category/api/deletecategory/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"category",
+						"api",
+						"deletecategory",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateCategory",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhc2hpbDkxMzMwOEBnbWFpbC5jb20iLCJpYXQiOjE2NjI4MTczMTUsIlVzZXIgSWQiOjIzLCJVc2VyIE5hbWUiOiJhc2hpc2gga3VtYXIgc2luZ2giLCJSb2xlIjpbeyJhdXRob3JpdHkiOiJST0xFX0VNUExPWUVFIn1dLCJleHAiOjE2NjI4MjA5MTV9.3gwMMSn4RuiAZbrIT23jC1MDvH1ut9hU23PLA6KksMHefd4Tztha3HP-YW78a0Uxp6JEslo9qxy9I17kFpu59g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"categoryid\": 1,\r\n        \"categoryname\": \"appls\",\r\n        \"description\": \"apple sales58\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/category/api/updatecategory",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"category",
+						"api",
+						"updatecategory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddDepartment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhc2hpbDkxMzMwOEBnbWFpbC5jb20iLCJpYXQiOjE2NjI4NzE5MjAsIlVzZXIgSWQiOjIzLCJVc2VyIE5hbWUiOiJhc2hpc2gga3VtYXIgc2luZ2giLCJSb2xlIjpbeyJhdXRob3JpdHkiOiJST0xFX0VNUExPWUVFIn1dLCJleHAiOjE2NjI4NzU1MjB9.an5fJjOLERgne-M6YlKf7kVOmmcP6exm2aM5340LbiB1Vs0Pb5ksXoi6aW05MVLhTSPTux_AKeV0f-B_OieZDg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"departmentname\":\"IT\",\r\n    \"departmentCode\" : \"ADMIN\",\r\n    \"organizationName\" : \"TraformTravelS\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/department/api/adddepartment",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"department",
+						"api",
+						"adddepartment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ReadDepartment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhc2hpbDkxMzMwOEBnbWFpbC5jb20iLCJpYXQiOjE2NjI4NzE5MjAsIlVzZXIgSWQiOjIzLCJVc2VyIE5hbWUiOiJhc2hpc2gga3VtYXIgc2luZ2giLCJSb2xlIjpbeyJhdXRob3JpdHkiOiJST0xFX0VNUExPWUVFIn1dLCJleHAiOjE2NjI4NzU1MjB9.an5fJjOLERgne-M6YlKf7kVOmmcP6exm2aM5340LbiB1Vs0Pb5ksXoi6aW05MVLhTSPTux_AKeV0f-B_OieZDg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8085/department/api/viewdepartment/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"department",
+						"api",
+						"viewdepartment",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateDepartment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhc2hpbDkxMzMwOEBnbWFpbC5jb20iLCJpYXQiOjE2NjI4NzE5MjAsIlVzZXIgSWQiOjIzLCJVc2VyIE5hbWUiOiJhc2hpc2gga3VtYXIgc2luZ2giLCJSb2xlIjpbeyJhdXRob3JpdHkiOiJST0xFX0VNUExPWUVFIn1dLCJleHAiOjE2NjI4NzU1MjB9.an5fJjOLERgne-M6YlKf7kVOmmcP6exm2aM5340LbiB1Vs0Pb5ksXoi6aW05MVLhTSPTux_AKeV0f-B_OieZDg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"departmentid\":1,\r\n    \"departmentname\":\"ITs\",\r\n    \"departmentCode\" : \"ADMINs\",\r\n    \"organizationName\" : \"TraformTravel\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/department/api/updatedepartment",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"department",
+						"api",
+						"updatedepartment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteDepartment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhc2hpbDkxMzMwOEBnbWFpbC5jb20iLCJpYXQiOjE2NjI4NzE5MjAsIlVzZXIgSWQiOjIzLCJVc2VyIE5hbWUiOiJhc2hpc2gga3VtYXIgc2luZ2giLCJSb2xlIjpbeyJhdXRob3JpdHkiOiJST0xFX0VNUExPWUVFIn1dLCJleHAiOjE2NjI4NzU1MjB9.an5fJjOLERgne-M6YlKf7kVOmmcP6exm2aM5340LbiB1Vs0Pb5ksXoi6aW05MVLhTSPTux_AKeV0f-B_OieZDg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/department/api/deletedepartment/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"department",
+						"api",
+						"deletedepartment",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
